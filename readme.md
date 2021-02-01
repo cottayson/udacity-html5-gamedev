@@ -64,6 +64,11 @@ In this simple example we set the width and height to 1200 by 720 respectively
 1. Declare it's `onload` method.
 1. Set `Image.src = "url"`
 
+### Draw image on canvas
+1. [drawImage docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
+1. Use `context.drawImage(image, sx, sy)` to draw image on canvas
+
+
 
 
 
