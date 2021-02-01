@@ -9,13 +9,26 @@
   <canvas id="my_canvas"></canvas>
   <script>
     let canvas = undefined;
+    let context = undefined;
     function setup() {
-      // Create a canvas element using document.getElementById,
-      // Then set the width and height properties 
-      // to 1200 and 720, respectively
       canvas = document.getElementById("my_canvas");
-      canvas.width = 1200;
-      canvas.height = 720;
+      context = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // 1. Declare a `new Image()` object.
+      // 2. Declare it's `onload` method.
+      // 3. Set `Image.src = "url"`
+
+      // Create a new image with a src of "myimage.png"
+      // and onload of onImageLoad
+      // YOUR CODE HERE
+    }
+
+    function onImageLoad() {
+      // Use the console.log function to print a statement to the browser console.
+      // This will print once the image has been downloaded.
+      // YOUR CODE HERE
     }
 
     setup();

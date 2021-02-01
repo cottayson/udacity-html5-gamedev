@@ -36,3 +36,37 @@ or copy that
 `<canvas id="my_canvas"></canvas>`
 1. Create a canvas element using `document.getElementById`
 1. Set `width` and `height` attributes
+
+### Using chrome dev tools
+* On Document page you can invoke **chrome developer console* by pressing `F12` or `cmd + shift + I`
+* Than type `canvas` in console and hit enter, you get something like this:
+  `canvas id="mycanvas" width="1200" height="720"`
+* You can create, modify any javascript objects, variables and other stuff in console like in script tag in html file
+
+### canvas 2d context
+The interesting thing that we haven't yet covered is grabbing the *context*
+of the canvas. Think of the canvas object that we fetched from the *DOM*
+as a *DOM element*.
+
+The *context* is a handle to the drawing APIs that we'll able to use
+to modify the canvas visuals later.
+
+In this simple example we set the width and height to 1200 by 720 respectively
+
+#### Note:
+* Any time that user would resize the screen, the canvas will remain this size.
+* To make the canvas fit to the screen, we set width to `window.innerWidth` and
+  height to `window.innerHeight`
+
+## Working with images
+### Loading an image:
+1. Declare a `new Image()` object.
+1. Declare it's `onload` method.
+1. Set `Image.src = "url"`
+
+
+
+
+
+
+
