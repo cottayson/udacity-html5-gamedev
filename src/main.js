@@ -9,12 +9,15 @@ let frame = 0;
 
 function onImageLoad() {
   console.log('one image loaded');
-  // Call onContentLoaded() when the images have finished loading
-  // YOU CODE HERE
+  numberOfLoadedImages += 1;
+  if (numberOfLoadedImages === assets.length) {
+    onContentLoaded();
+  }
 }
 
 function onContentLoaded() {
   console.log('all images loaded');
+  // Hint: use setInterval method
   // YOUR CODE HERE
 }
 
@@ -31,6 +34,7 @@ function setup() {
   // Afterwards, call setInterval to run at a framerate of 30 frames
   // per second, calling the animate function each time.
   
+  // Hint: use for loop
   // YOUR CODE HERE
 }
 
