@@ -7,32 +7,6 @@
 </head>
 <body>
   <canvas id="my_canvas"></canvas>
-  <script>
-    let canvas = undefined;
-    let context = undefined;
-    let image = undefined;
-
-    function setup() {
-      canvas = document.getElementById("my_canvas");
-      context = canvas.getContext('2d');
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-
-      image = new Image();
-      image.onload = onImageLoad;
-      image.src = "myimage.png";
-    }
-
-    function onImageLoad() {
-      console.log(`image loaded from: ${image.src}`);
-      // Draw an image to the canvas at position 192, 192.
-      // Remember that the drawImage method is attached
-      // to the 2D Context, not the convas element!
-      context.drawImage(image, 192, 192);
-    }
-
-    setup();
-
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

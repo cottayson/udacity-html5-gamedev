@@ -68,6 +68,65 @@ In this simple example we set the width and height to 1200 by 720 respectively
 1. [drawImage docs](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)
 1. Use `context.drawImage(image, sx, sy)` to draw image on canvas
 
+### Coordinate system
+* The origin of convas coordinate system, i.e. location of `(0, 0)`
+  Is in the top left corner.
+* `x` increases **from left to right** of canvas element
+* `y` increases **from top to bottom**
+* `drawImage(image, sx, sy)` method place the top left corner of the image at
+  point `(sx, sy)`
+
+### Image formats
+* png = Portable Network Graphics
+* jpeg = Joint Photohraphic Experts Group
+* WebP is an image format employing both lossy and lossless compression
+* [Comparison of all formats](https://en.wikipedia.org/wiki/Comparison_of_graphics_file_formats)
+* `png` have tranparency (alpha)
+* `jpeg` doesn't have tranparency but have better compression
+* `webp` have tranparency and compression
+
+### Move code to javascript file main.js
+* Copy code from `src/index.html` that inside `<script>` tag to `src/main.js`
+* Create link to `main.js`
+```html
+<script src="main.js"></script>
+```
+
+### Your first animation
+Now we going to write this flip book animation style in code.
+We've given you a list of image assets to use for "Evil Devices".
+
+What you need to do is load all of this image assest and place them
+in the frame array.
+
+After your images are loaded, you should go through and fill out
+the rest of the animation function here, which will actually draw
+the flip book animation images to the screen as we described before.
+
+#### Important:
+Make sure that when your animation is finished you loop back to the
+beginning.
+
+Now before this you need to have some logic that checks whether or not
+the images are loaded, and once **all of the frames have been loaded**,
+actually does a call to `setInterval`.
+
+Now `setInterval(someFunction, delayInMilliseconds)` takes as input
+a pointer to a function you'd like to call as well a millisecond count
+on how often you want it to be called (delay between ticks).
+
+* 1 second = 1000 milliseconds
+
+So, for instance, if I made a function and wanted it to be called once
+every 30 milliseconds, those would be parameters that I pass into it.
+
+Make sure that your `setInterval` call, actually calls the `animate`
+function, **once every 30 milliseconds**.
+
+
+
+
+
 
 
 
