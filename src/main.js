@@ -17,8 +17,7 @@ function onImageLoad() {
 
 function onContentLoaded() {
   console.log('all images loaded');
-  // Hint: use setInterval method
-  // YOUR CODE HERE
+  setInterval(animate, frameRate);
 }
 
 
@@ -34,8 +33,12 @@ function setup() {
   // Afterwards, call setInterval to run at a framerate of 30 frames
   // per second, calling the animate function each time.
   
-  // Hint: use for loop
-  // YOUR CODE HERE
+  for (let i = 0; i < assets.length; i++) {
+    let image = new Image();
+    image.onload = onImageLoad;
+    image.src = assets[i];
+    frames.push(image);
+  }
 }
 
 function animate() {
@@ -46,7 +49,8 @@ function animate() {
   // Reset background (you can see ghosting effect if you comment this)
   context.clearRect(0, 0, canvas.width, canvas.height);
 
-  // YOUR CODE HERE
+  context.drawImage(frames[frame], 192, 192);
+  frame = (frame + 1) % frames.length;
 }
 
 setup();

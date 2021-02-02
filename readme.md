@@ -123,6 +123,47 @@ every 30 milliseconds, those would be parameters that I pass into it.
 Make sure that your `setInterval` call, actually calls the `animate`
 function, **once every 30 milliseconds**.
 
+### Comments to solution
+* Firstly, at the top of our file `main.js` we declare two new variables:
+`frameRate` and `frame`.
+* `frameRate` represents how often we'd like to actually call the 
+  animate function.
+* `Frame` is a variable that we're going to use to represent that the
+  current frame in our flip book is.
+* Since we already have our frames array available, the next step is 
+  actually loop through our predefined assets, and load each of the
+  defined images into the frames array.
+
+  This follow the same 3 step process we saw before:
+  + Create a new image 
+    `let image = new Image()`
+  + Set its on load result
+    `image.onload = onLoadImage`
+  + Set its source
+    `image.src = assets[i]`
+* Once this is done we can actually call this `setInterval` function,
+  which will call the `animate` function at the `frameRate` that we
+  provided before.
+
+* `animate` function has a little bit of tricky logic inside of it.
+  First off, we have our framecounter `frame` that we've defined.
+  We use this to define what image out of the `frames` array we have
+  to draw the canvas, and of course, at our lovely position of 192 by 192.
+
+* Once we've drawn the current frame we actually have to increment it,
+  and that's where this little nice piece of math comes along
+  `frame = (frame + 1) % frames.length`
+
+  What we do is increment frame counter and then modulo it by the frame's
+  length.
+
+  What will occur here is that if `frame` ever becomes longer than 
+  `frames.length`, the modulo function will have it loop around back to 0
+  without us having to have all the other `if` statements invoved.
+
+* We also used `context.clearRect(0, 0, canvas.width, canvas.height)` to
+  clear canvas on each frame (call of `animate` function).
+
 
 
 
